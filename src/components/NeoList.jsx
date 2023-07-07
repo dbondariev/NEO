@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Box, List, Typography, ListItem } from '@mui/material';
 import NeoCard from './NeoCard';
 
+
 const NeoList = () => {
  const [neoData, setNeoData] = useState([]);
  const [loading, setLoading] = useState(true);
@@ -17,8 +18,7 @@ const NeoList = () => {
     const response = await axios.get(
      `https://api.nasa.gov/neo/rest/v1/feed?start_date=${formattedStartDate}&end_date=${
       today.toISOString().split('T')[0]
-     }&api_key=${import.meta.env.VITE_REACT_APP_API_KEY}
-`,
+     }&api_key=hIpC9VpYspxElHynvcE8tQEZyWguy7f1FVBfRJl1`,
     );
 
     const neoData = response.data.near_earth_objects;
@@ -82,3 +82,5 @@ const NeoList = () => {
 };
 
 export default NeoList;
+
+
